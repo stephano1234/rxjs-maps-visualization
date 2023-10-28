@@ -1,10 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component } from "@angular/core";
-import { OrdinalNumberPipe } from "../pipes/ordinal-number.pipe";
-import { UnitNumberPipe } from "../pipes/unit-number.pipe";
+import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Observable, scan } from "rxjs";
 import { ObservableMapService } from "../services/observable-map.service";
-import { animate, state, style, transition, trigger } from "@angular/animations";
+import { OrdinalNumberPipe } from "../pipes/ordinal-number.pipe";
+import { UnitNumberPipe } from "../pipes/unit-number.pipe";
+import { ProcessedTimePipe } from "../pipes/processed-time.pipe";
 
 type ProcessMessageInformation = {
   position: number;
@@ -31,36 +32,36 @@ type ProcessMessageInformation = {
           class="progress-bar bg-secondary">
         </div>
         <div class="data-text">
-          {{ message.position | ordinalNumber }}
+          {{ message.position | ordinalNumber }}: {{ message.processingTime | processedTime }}
         </div>
       </div>
     </div>
   `,
   styles: [`
-  .pipeline {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
-    column-gap: 0.5rem;
-  }
-  .empty-text {
-    height: 2rem;
-    margin: 0rem;
-  }
-  .data {
-    position: relative;
-    width: 6rem;
-    height: 2rem;
-  }
-  .data-text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .pipeline {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      row-gap: 0.5rem;
+      column-gap: 0.5rem;
+    }
+    .empty-text {
+      height: 2rem;
+      margin: 0rem;
+    }
+    .data {
+      position: relative;
+      width: 6rem;
+      height: 2rem;
+    }
+    .data-text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   `],
   animations: [
     trigger('dataProgress', [
@@ -77,6 +78,7 @@ type ProcessMessageInformation = {
   imports: [
     OrdinalNumberPipe,
     UnitNumberPipe,
+    ProcessedTimePipe,
     CommonModule,
   ]
 })

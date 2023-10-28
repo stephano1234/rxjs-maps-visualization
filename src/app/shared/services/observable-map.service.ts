@@ -92,7 +92,7 @@ export class ObservableMapService {
         }
       }),
       (observableMapFunction[config.map] as ObservableMapFunctionType)(([message, processingTime]) =>
-        of(new Message(message as string, ++this._processedCount)).pipe(
+        of(new Message(message as string, ++this._processedCount, processingTime)).pipe(
           tap((message) => loadingEvent.next({
             value: message.sentOrder,
             operation: 'process',

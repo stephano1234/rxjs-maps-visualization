@@ -1,7 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
-import { OrdinalNumberPipe } from "../pipes/ordinal-number.pipe";
 import { animate, keyframes, style, transition, trigger } from "@angular/animations";
+import { OrdinalNumberPipe } from "../pipes/ordinal-number.pipe";
+import { ProcessedTimePipe } from "../pipes/processed-time.pipe";
 import Message from "../models/message.model";
 
 @Component({
@@ -13,13 +14,15 @@ import Message from "../models/message.model";
         <thead>
           <tr>
             <th class="col">Message</th>
-            <th class="col">Sent message position</th>
+            <th class="col">Position</th>
+            <th class="col">Elapsed time</th>
           </tr>
         </thead>
         <tbody>
           <tr @row *ngFor="let message of messages">
             <td>{{ message.value }}</td>
             <td>{{ message.sentOrder | ordinalNumber }}</td>
+            <td>{{ message.processingTime | processedTime }}</td>
           </tr>
         </tbody>
       </table>
@@ -44,6 +47,7 @@ import Message from "../models/message.model";
   standalone: true,
   imports: [
     OrdinalNumberPipe,
+    ProcessedTimePipe,
     CommonModule,
   ],
 })
