@@ -13,7 +13,9 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(
-      RouterModule.forRoot(routes),
+      /* Hashing location strategy is necessary for Github Pages to work properly
+      when changing routes by the browser URL. */
+      RouterModule.forRoot(routes, { useHash: true }),
       BrowserAnimationsModule,
     ),
   ]
