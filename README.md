@@ -16,17 +16,5 @@ Each of the four streams is the same. The only difference is what RXJS observabl
 
 I hope this project clarifies the basic mechanism of the RXJS observable maps, which for many, is yet too abstract. Try to run the project and see for yourself.
 ***
-## Run
-### Docker command:
-```
-docker run --name rxjs-maps-visualization --rm --network host -it -w /usr/src/app -v ${PWD}/:/usr/src/app node:18 bash
-```
-### Angular commands:
-```
-npm install
-```
-```
-npm run start
-```
-### See the result at:
-[http://localhost:4200/](http://localhost:4200/)
+## See the project at:
+[https://stephano1234.github.io/rxjs-maps-visualization](https://stephano1234.github.io/rxjs-maps-visualization)
