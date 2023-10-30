@@ -2,6 +2,11 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
+    path: 'home',
+    title: 'Home',
+    loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent),
+  },
+  {
     path: 'switch-map',
     title: 'Switch Map',
     loadComponent: () => import('./features/switch-map/switch-map.component').then(m => m.SwitchMapComponent),
@@ -29,6 +34,6 @@ export const routes: Routes = [
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'switch-map',
+    redirectTo: 'home',
   },
 ];
