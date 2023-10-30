@@ -8,6 +8,9 @@ import { RouterModule } from '@angular/router';
       <div class="container-fluid">
         <ul class="navbar-nav">
           <li class="nav-item">
+            <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" routerLink="switch-map" routerLinkActive="active">Switch Map</a>
           </li>
           <li class="nav-item">
