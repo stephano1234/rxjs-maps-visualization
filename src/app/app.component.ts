@@ -15,6 +15,14 @@ import { RouterModule } from '@angular/router';
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="bi bi-gear nav-link configuration-icon-size"
+              routerLink="configuration"
+              routerLinkActive="active"
+            ></a>
+          </li>
+        </ul>
         <div class="collapse navbar-collapse" id="responsiveNavbarArea">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -34,14 +42,6 @@ import { RouterModule } from '@angular/router';
             </li>
           </ul>
         </div>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="bi bi-gear nav-link configuration-icon-size"
-              routerLink="configuration"
-              routerLinkActive="active"
-            ></a>
-          </li>
-        </ul>
       </div>
     </nav>
     <router-outlet></router-outlet>
