@@ -6,23 +6,34 @@ import { RouterModule } from '@angular/router';
   template: `
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-3">
       <div class="container-fluid">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="switch-map" routerLinkActive="active">Switch Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="merge-map" routerLinkActive="active">Merge Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="concat-map" routerLinkActive="active">Concat Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="exhaust-map" routerLinkActive="active">Exhaust Map</a>
-          </li>
-        </ul>
+        <button class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#responsiveNavbarArea"
+          aria-controls="responsiveNavbarArea"
+          aria-expanded="false"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="responsiveNavbarArea">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="switch-map" routerLinkActive="active">Switch Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="merge-map" routerLinkActive="active">Merge Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="concat-map" routerLinkActive="active">Concat Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="exhaust-map" routerLinkActive="active">Exhaust Map</a>
+            </li>
+          </ul>
+        </div>
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="bi bi-gear nav-link configuration-icon-size"
